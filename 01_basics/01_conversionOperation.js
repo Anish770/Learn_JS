@@ -14,3 +14,14 @@ console.log(typeof(boolvar))
 console.log(boolvar)
 //1=>true;0=>false
 //""=>false;"anish"=>true
+
+// ***********************************************************************************************************************
+let name1="Anish"
+let name2="Chettri"
+let name=name1+" "+name2
+console.log(name)
+console.log(1+"2"+2)
+console.log("1"+2+2)
+console.log(1+2+"2")
+console.log(+true)
+console.log(+"12")
