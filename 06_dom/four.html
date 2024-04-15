@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANISH | DOM learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(LangName) {
+        const li=document.createElement('li')
+        li.innerHTML=`${LangName}`
+        const child=document.querySelector('.language').appendChild(li)
+    }
+    addLang('ruby')
+    function addLangOpti(LangName) {
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(LangName))
+        const child=document.querySelector('.language').appendChild(li)
+    } 
+    addLangOpti('css')
+
+    //edit method 1
+    const editList=document.querySelector('li:nth-child(3)')
+    // editList.innerHTML='c++'//not optimised
+    const newli=document.createElement('li')
+    newli.textContent='gojo'
+    editList.replaceWith(newli)
+
+    //edit method 2
+    const firstList=document.querySelector('li:first-child')
+    firstList.outerHTML='<li>rust</li>'
+    const lastList=document.querySelector('li:last-child')
+    lastList.remove()
+</script>
+</html>
