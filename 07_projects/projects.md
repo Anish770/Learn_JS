@@ -234,3 +234,56 @@ function newGame() {
 }
 
 ```
+## Project 5 Solution
+
+```javascript
+const random_col = function () {
+  let color = '#';
+  const hex = '0123456789ABCDEF';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  // console.log(color);
+  return color;
+};
+let start;
+document.querySelector('.btn_start').addEventListener('click', () => {
+  if (start == null) {
+    start = setInterval(() => {
+      document.body.style.backgroundColor = random_col();
+    }, 1000);
+  }
+  console.log('start');
+});
+document.querySelector('.btn_end').addEventListener('click', () => {
+  clearInterval(start);
+  start = null;
+  console.log('end');
+});
+
+```
+## Project 6 Solution
+
+```javascript
+const field = document.querySelector('.input_field');
+window.addEventListener('keydown', (e) => {
+  console.log(e);
+
+  field.innerHTML = `
+  <div class='keyboard_table'>
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'Space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+  </div>`;
+});
+
+```
