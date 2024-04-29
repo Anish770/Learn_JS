@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnishChettri</title>
+</head>
+<body>
+    <h1 class="h1">Anish Chettri</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let start
+    const startloop=function ()
+    {
+        console.log('start cliked');
+        if(start==null)
+        {
+            start=setInterval(()=>{
+                console.log('yo');
+            },1000)
+        }
+        // function print(){
+        //     console.log('yo');
+        // }
+    }
+    const endloop=function ()
+    {
+        console.log('stop cliked');
+        clearInterval(start)
+        start=null
+    }
+    document.querySelector('#start').addEventListener('click',startloop)
+    document.querySelector('#stop').addEventListener('click',endloop)
+</script>
+</html>
