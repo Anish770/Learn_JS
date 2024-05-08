@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <button id='orange'>Orange</button>
+    <button id='green''>Green</button>
+</body>
+<script>
+    // function init() {
+    //     let name = "Mozilla"; // name is a local variable created by init
+    //     function displayName() {
+    //         // displayName() is the inner function, that forms the closure
+    //         console.log(name); // use variable declared in the parent function
+    //     }
+    //     displayName();
+    // }
+    // init();
+// function outer() {
+//     let username='anish'
+//     function inner() {
+//         let secret='123'
+//         console.log('inner',username);
+//     }
+//     function innertwo() {
+//         console.log('innertwo',username);
+//         console.log(secret)
+//     }
+//     inner()
+//     innertwo()
+//     // console.log(secret)
+// }
+// outer()
+// console.log('outer',username);
+
+// function myFunc() {
+//     let name='mozilla'
+//     function displayName() {
+//         console.log(name);
+//     }
+//     return displayName
+// }
+// const func=myFunc()
+// func()
+// document.querySelector('#orange').onclick=function()
+// {
+//     document.body.style.backgroundColor='orange'
+// }
+// document.querySelector('#green').onclick=function()
+// {
+    //     document.body.style.backgroundColor='green'
+    // }
+    
+    function clickHandler(color) {
+        // document.body.style.backgroundColor=`${color}`
+        return function(){
+            document.body.style.backgroundColor=`${color}`
+        }
+    }
+    document.querySelector('#orange').onclick=clickHandler('orange')
+    document.querySelector('#green').onclick=clickHandler('green')
+
+</script>
+</html>
